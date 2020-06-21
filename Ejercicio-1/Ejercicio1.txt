@@ -1,0 +1,6 @@
+------------> Local Storage
+
+* El usuario podrá crear/eliminar/ver sus tweets en un listado.
+* Los tweets se almacenarán el Local Storage.
+* El usuario podrá agregar una cantidad ilimitada de tweets.
+* Al cargar la página los tweets deben cargarse de Local Storage, al eliminarse deben quitarse de Local Storage.

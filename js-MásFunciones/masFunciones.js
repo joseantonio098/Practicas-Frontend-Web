@@ -34,4 +34,33 @@ const autos = [
 console.log(autos[0].motor); //Accedemos al array autos ----> posición(0) ------> propiedad(motor)
 
 
+//-------------------- Funciones
+//Declaramos Funciones con valores por defecto a los parámetros
+let amigo = (nombre='jose',edad=22) => {
+    return `yo me llamo ${nombre} y tengo ${edad} años`;
+}
+console.log(amigo('Raul')); //Nombre ---->(Raul)
 
+
+//Funciónes Autoinvocadas -----> (IIFE)
+(function(mascota){
+    console.log(`mi mascota es un ${mascota}`)
+})('Gato'); //----> mascota = 'Gato';
+
+
+//--------------------------- (LOCALSTORAGE) -----> Datos almacenados en la pag. Web 
+
+//-->(localStorage) Si cerramos el navegador, el elemento(llave) se mantiene almacenado
+//-->(sessionStorage) si cerramos el navegador, el elemento se elimina
+
+//---> Permite establecer un elemento(llave) y almacenarlo
+localStorage.setItem('mascota','Tiger');
+
+//---> Permite acceder al elemento almacenado
+localStorage.getItem('mascota');
+
+//---> Permite eliminar el elemento almacenado
+localStorage.removeItem('mascota');
+
+//---> Permite eliminar todos los elementos almacenados
+localStorage.clear();
