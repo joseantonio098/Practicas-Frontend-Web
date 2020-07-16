@@ -1,0 +1,22 @@
+------------> Comprar productos (Local Storage)
+
+* Al presionar en Comprar cargará un Spinner y se añadirá el 
+producto dentro de un aviso que se mostrará en pantalla.
+
+* En el aviso se agregará la cantidad-producto-precio + total,
+además contará con un símbolo de X para eliminar cada producto y
+1 botón para 'borrar' todo los productos.
+
+* Al seleccionar un mismo producto, la cantidad y el precio se actualizará.
+
+* Al recargar la página los productos seguirán almacenados en el aviso
+
+* Los productos se agregarán en Local Storage.
+
+* Al presionar en X y/o 'borrar' los productos se eliminarán de
+Local Storge y el total se reajustará.
+
+
+Enlace: Página de ejemplo
+https://www.lacasadelajedrez.com/articulos/materias/material-de-juego/murales/36/
+

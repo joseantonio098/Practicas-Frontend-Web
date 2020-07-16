@@ -1,6 +1,5 @@
 
-//................................... MÉTODOS Y FUNCIONES ADICIONALES DE JS ..............................
-
+//......................... MÉTODOS Y FUNCIONES ADICIONALES DE JS .........................
 
  //-------------------- Convertir Números y Textos
 let numero= '100';
@@ -64,3 +63,63 @@ localStorage.removeItem('mascota');
 
 //---> Permite eliminar todos los elementos almacenados
 localStorage.clear();
+
+
+//--------------------------- Errores con Try Catch
+
+//---> Permite ejecutar código(Funciones) sin alterar el resto de funciones.
+try{
+    aplicando();
+} catch(error) {
+    console.log(error);
+} finally { 
+    console.log('no le importa, igual se ejecuta'); //-->Siempre se va ejecutar
+}
+
+
+//--------------------------- Fecha
+
+//---> Podemos definir una fecha específica
+let fecha = new Date('10-20-2016');  
+console.log(fecha);
+
+//---> Podemos establecer un año
+let dato = fecha.setFullYear(2018);
+console.log(dato);
+
+
+//--------------------------- Operador Ternario
+const logueado = true;
+console.log( logueado === true ? 'Sí se logeo' : 'No se logeo' );
+
+
+//--------------------------- Iteradores para recorrer
+
+//---> forEach para recorrer arreglos
+const meses = ['enero','febrero','marzo','abril','mayo','junio'];
+
+meses.forEach( function (mes, index){
+    console.log(`${index} - ${mes}`);
+});
+
+
+//---> map para recorrer arreglos con objetos
+const carrito = [
+    {id: 1, producto: 'libro'},
+    {id: 2, producto: 'Camisa'},
+    {id: 3, producto: 'Guitarra'},
+    {id: 4, producto: 'Disco'}
+]
+const nomProd = carrito.map( function(carro){
+    console.log(`${carro.id} - ${carro.producto}`);
+});
+
+//---> Recorrer objetos
+const automovil = {
+    modelo: 'Camaro',
+    motor: 6.2,
+    marca: 'Chevrolet'
+}
+for(let auto in automovil){
+    console.log(`${auto} : ${automovil[auto]}`);
+}
