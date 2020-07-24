@@ -123,3 +123,15 @@ const automovil = {
 for(let auto in automovil){
     console.log(`${auto} : ${automovil[auto]}`);
 }
+
+//--------------------------- Eventos
+btn.addEventListener('click', function(e){
+    console.log(e.type);
+    // e.type --> Muestra el tipo de evento que se ejecutó (click)
+});
+
+//---> Evento bubbling
+btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    // e.stopPropagation() --> Detiene la ejecución(propagación) de otros eventos
+});

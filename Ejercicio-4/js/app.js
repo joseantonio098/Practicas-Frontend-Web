@@ -1,114 +1,106 @@
-// -----------------------Variables
-const email = document.getElementById('email');
-const asunto = document.getElementById('asunto');
-const mensaje = document.getElementById('mensaje');
-const btnEnviar = document.getElementById('enviar');
-const btnResetear = document.getElementById('resetBtn');
+// -------------- Variables 
+const productosAlmacenados = document.querySelector('.productos-almacenados');
+const contenedorProductos = document.querySelector('.cont-select-producto');
+const productoSeleccionado = document.querySelector('.cont-prod');
 
-// -----------------------Eventos
+// -------------- Eventos
+activadorEventos();
 
-eventListener();
-
-function eventListener(){
-
-    // Inicio de la aplicación y deshabilitar submit
-    document.addEventListener('DOMContentLoaded', inicioApp);
-
-    // Campos del formulario
-    email.addEventListener('blur', validarCampo);
-    asunto.addEventListener('blur', validarCampo);
-    mensaje.addEventListener('blur', validarCampo);
-
-    // Botón de enviar en el submit
-    btnEnviar.addEventListener('click', enviarEmail);
-
-    // Botón de resetear formulario
-    btnResetear.addEventListener('click', resetearFormulario)
+function activadorEventos(){
+    productosAlmacenados.addEventListener('click', mostrarAviso);
+    contenedorProductos.addEventListener('click', cerrarAviso);
 }
 
-// -----------------------Funciones
+// -------------- Funciones
 
-function inicioApp(){
+// Muestra el aviso de compra
+function mostrarAviso(e){
+    if(e.target.classList.contains('btn-comprar')){
 
-    // Deshabilitar el envio
-    btnEnviar.disabled = true;
-} 
-
-// Valida que el campo tenga algo escrito
-function validarCampo(){
-    
-    // Se valida la longitud del texto y que no esté vacío
-    validarLongitud(this);
-
-    // Validar únicamente el email
-    if(this.type === 'email'){
-        validarEmail(this);
-    }
-
-    if(email.value !== '' && asunto.value !== '' && mensaje.value !== ''){
-
-        // Si no hay campos con clase de error
-        let errores = document.querySelectorAll('.error');
-        if(errores.length === 0){
-            btnEnviar.disabled = false;
-        }
-    }
-}
-
-// Verifica la longitud del texto en los campos
-function validarLongitud(campo){
-
-    if(campo.value.length > 0){
-        campo.style.borderBottomColor = 'green';
-        campo.classList.remove('error');
-    }else{
-        campo.style.borderBottomColor = 'red';
-        campo.classList.add('error');
-    }
-
-}
-
-function validarEmail(campo){
-
-    const mensaje = campo.value;
-    if(mensaje.indexOf('@') !== -1){
-        campo.style.borderBottomColor = 'green';
-        campo.classList.remove('error');
-    } else {
-        campo.style.borderBottomColor = 'red';
-        campo.classList.add('error');
-    }
-}
-
-// Cuando se envía el correo
-function enviarEmail(e){
-
-    // Spinner al presionar enviar
-    const spinnerGif = document.querySelector('#spinner');
-    spinnerGif.style.display = 'block';
-
-    // Gif que envía email
-    const enviado = document.createElement('img');
-    enviado.src = 'img/mail.gif';
-    enviado.style.display = 'block';
-
-    // Ocultar Spinner y mostrar Gif de enviado
-    setTimeout(function(){
-        spinnerGif.style.display = 'none';
-        document.querySelector('#loaders').appendChild(enviado);
-
+        // Mostrar Spinner
+        document.querySelector('.cont-spinner').style.display = 'flex';
+        
         setTimeout(function(){
-            enviado.remove();
-            document.querySelector('form').reset();
-        }, 5000);
 
-    }, 3000);
+            // Ocultar Spinner
+            document.querySelector('.cont-spinner').style.display = 'none';
+            contenedorProductos.style.display = 'flex';
+        },2000)
 
-    e.preventDefault();
+        guardarProducto(e);
+    } 
 }
 
-// Resetear el formulario
-function resetearFormulario(e){
-    document.querySelector('form').reset();
-    e.preventDefault();
+// Cierra el aviso de compra
+function cerrarAviso(e){
+    if(e.target.classList.contains('cont-select-producto')){
+        contenedorProductos.style.display = 'none';
+    }
 }
+
+// Guarda las características del producto en un objeto
+function guardarProducto(e){
+
+    // Accedemos al producto elegido
+    const productoElegido = e.target.parentElement.parentElement.parentElement;
+    const producto = {
+        imagen : productoElegido.children[0].children[0].getAttribute('src'),
+        titulo : productoElegido.children[1].children[0].children[0].textContent,
+        precio : productoElegido.children[2].children[0].children[0].textContent
+    }
+    agregarProducto(producto)
+}
+
+// Agrega el producto en el aviso
+function agregarProducto(producto){
+
+    // Se crea el contenedor del producto
+    const contProdElegido = document.createElement('div');
+    contProdElegido.classList.add('prod-elegidos'); 
+
+    crearImagen(producto,contProdElegido); // Insertamos la imagen
+    crearTitulo(producto,contProdElegido); // Insertamos el título
+    crearPrecio(producto,contProdElegido); // Insertamos el precio
+}   
+
+
+// Crea la imagen del producto
+function crearImagen(producto,contProdElegido){
+    // Se crea el contenedor de la imagen
+    const prodContImg = document.createElement('div');
+    prodContImg.classList.add('imagen');
+
+    // Se crea la imagen
+    const prodImg = document.createElement('img');
+    prodImg.setAttribute('src', producto.imagen);
+
+    // Se inserta la imagen
+    prodContImg.appendChild(prodImg);
+    contProdElegido.appendChild(prodContImg);
+    productoSeleccionado.appendChild(contProdElegido);
+}
+
+// Crea el título del producto
+function  crearTitulo(producto,contProdElegido){
+
+    // Se crea el título
+    const prodContTitulo = document.createElement('div');
+    prodContTitulo.classList.add('prod');
+    prodContTitulo.textContent = producto.titulo;
+
+    // Se inserta el título
+    contProdElegido.appendChild(prodContTitulo);
+}
+
+// Crea el precio del producto
+function  crearPrecio(producto,contProdElegido){
+
+    // Se crea el precio
+    const prodContPrecio = document.createElement('div');
+    prodContPrecio.classList.add('prec');
+    prodContPrecio.textContent = producto.precio;
+
+    // Se inserta el precio
+    contProdElegido.appendChild(prodContPrecio);
+}
+
