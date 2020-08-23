@@ -135,3 +135,4 @@ btn.addEventListener('click', function(e){
     e.stopPropagation();
     // e.stopPropagation() --> Detiene la ejecución(propagación) de otros eventos
 });
+

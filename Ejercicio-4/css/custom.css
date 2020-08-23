@@ -37,6 +37,7 @@
 
 .producto .titulo-producto a{
     text-decoration: none;
+    margin-right: 360px;
 }
 .producto .titulo-producto a h3{
     color: rgb(179, 21, 21);
@@ -219,3 +220,20 @@
     background: rgba(0, 0, 0, 0.109);
 }
 
+.cerrar{
+    background-color: red;
+    color: white;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease;
+    user-select: none;
+}
+
+.cerrar:hover{
+    transform: rotate(45deg);
+    background: rgb(185, 5, 5);
+}
