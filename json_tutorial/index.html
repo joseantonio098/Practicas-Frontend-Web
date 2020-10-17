@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tutorial JSON</title>
+</head>
+<body>
+
+    <ul id="personas"></ul>
+
+
+    <script>
+      
+        var xhttp = new XMLHttpRequest(); //Hacemos la petición al servidor
+
+        xhttp.onreadystatechange = function() { //Cuando se genere un cambio de estado
+            if (this.readyState == 4 && this.status == 200) {
+                var respuesta = JSON.parse(xhttp.responseText); //Traer los datos en formato JSON
+                var personas = respuesta.personas
+
+                let salida = '';
+
+                for(let i=0; i<personas.length; i++){ //Iteramos el archivo JSONS
+                    salida += `<li> mi nombre es: ${personas[i].nombre} </li>`;
+                }
+
+                // Mostramos en pantalla
+                document.getElementById('personas').innerHTML = salida; 
+            }
+        };
+
+        xhttp.open("GET", "personas.json", true);
+        xhttp.send(); //Enviamos la petición      
+        
+    </script>
+</body>
+</html>
