@@ -1,3 +1,47 @@
+//-------------------------------Objetos en JS (Inicio)
+
+"use strict"; //Vuelve el código JS en forma estricta
+
+const productos = {
+    nombre: 'Monitor de 20 pulgadas',
+    precio: 300,
+    disponible: true,
+    modelo: function(color,tamano){ //Método
+        return(`El producto es de color ${color}, tiene un tamaño ${tamano} y tiene un precio de ${this.precio} soles`);
+    },
+    informacion: { //Objeto
+        peso: '1 kg',
+        fecha: 2017,
+        tipo: { //Objeto Anidado
+            campaña: 'verano',
+            lanzamiento: 2021
+        }
+    } 
+}
+
+Object.freeze(productos); //Congelamos un objeto (No se podrá reemplazar, agregar y eliminar)
+Object.isFrozen(productos); //Preguntamos si el objeto está congelado
+
+Object.seal(productos); //Sellamos un objeto (solo se podrá reemplazar, no agregar ni eliminar)
+Object.isSealed(productos) //Preguntamos si el objeto está sellado
+
+Object.keys( productos ); //Retorna las llaves en un arreglo
+Object.values( productos ); //Retorna los valores de las llaves en un arreglo
+Object.entries( productos ); //Retorna las llaves y sus valores en un arreglo
+
+//Unir Objetos (2 formas)
+const prod1 = Object.assign(productos,ubicacion);
+const prod2 = {...productos,...ubicacion}
+
+
+const { nombre,precio } = productos //Destructuración de objetos 
+const { informacion: { tipo:{ lanzamiento } } } = productos //Destructuración de objetos anidados
+
+delete productos.disponible; //Eliminando llaves de un objeto 
+
+
+
+// -----------------------------------------------------------------
 // Función Constructora
 // --> Nro-1 Creamos en objeto
 function Cliente(nombre,saldo){ // --> Nro-2 Definimos la Clase (El Constructor)
@@ -52,6 +96,8 @@ const persona2 = new Object({
     nombre: 'Jose',
     edad: 22
 });
+
+
 
 // -----------------------------------------------------------------
 // PROTOTYPE EN JAVASCRIPT
@@ -133,6 +179,9 @@ usuario.saldo = '5000';
 
 console.log(usuario.imprimirSaldo());
 
+
+
+// -----------------------------------------------------------------
 // -----------------------> CLASES EN JAVASCRIPT
 class Cliente{
     constructor(nombre,saldo){

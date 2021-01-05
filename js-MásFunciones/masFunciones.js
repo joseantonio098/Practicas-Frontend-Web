@@ -19,6 +19,7 @@ let numeros = [3,6,1,5,70,10,30,40,20];
 
 semana.indexOf('miercoles');  // Indica la posición de un elemento en el array ---> (3)
 semana.slice(3,4); // Elimina el elemento de un array ---> elimina desde la posición 3 al 4 (2 elementos)
+semana.splice(2,3); // Elimina el elemento de un array --->  elimina desde la posición 2, 3 elementos
 
 numero.sort(function(a,b){
     return a-b   // Permite ordenar Números según su valor  ----> (1,3,5,6,10,20,30,40,70)
@@ -31,6 +32,16 @@ const autos = [
     {modelo: 'Challenger', motor: 6.3}
 ]
 console.log(autos[0].motor); //Accedemos al array autos ----> posición(0) ------> propiedad(motor)
+
+// --> Arreglos con spread operator (Agregando datos al arreglo)
+const productos = [];
+let agregandoProductos;
+
+agregandoProductos = [...productos, producto1]; //Añadimos el primer producto
+agregandoProductos = [...agregandoProductos, producto2];
+agregandoProductos = [producto3, ...agregandoProductos]; //Agregamos producto al comienzo
+
+console.log(agregandoProductos);
 
 
 //-------------------- Funciones
