@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue práctica-2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app" class="container mt-5">
+
+        <div :class="['p-4','text-white',colorFondo]"><!-- Clases -->
+            <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Veniam alias ab unde placeat qui, voluptate inventore facilis
+            ad itaque aliquam adipisci deserunt perferendis animi magni
+            excepturi sed mollitia nam optio nisi reiciendis blanditiis 
+            natus mollitia eaque, ratione dolore beatae sequi.</p>
+        </div>
+        <input type="text" class="form-control my-3" v-model="colorFondo">
+
+        <!-- Clases-Objetos -->
+        <div class="text-white p-3" :class="[ {'bg-success': color}, {'bg-danger': !color} ]">
+            <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Consequatur ducimus facere libero officiis neque minus in 
+            provident voluptatem, tempore itaque rem nostrum odit eveniet 
+            sit praesentium iure similique ex unde hic molestias! Esse 
+            inventore ratione et perferendis ad deleniti impedit!.</p>
+        </div>
+        <button class="btn btn-secondary mt-2" v-on:click="color = !color">Cambiar</button>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="js/practica2.js"></script>
+</body>
+</html>
