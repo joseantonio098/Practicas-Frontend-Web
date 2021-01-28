@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Práctica-1(VueJS)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
@@ -11,8 +12,27 @@
         <h2>{{titulo}} - {{nombre}}</h2> <!-- Interpolación -->
         <h2>{{ cantidad < 100 ? 'Poco dinero' : 'mucho dinero' }}</h2>
 
-        <a v-bind:href="ruta" target="_blank">Click aquí-1</a> <br><!-- Vincular atributos -->
+        <a v-bind:href="ruta" target="_blank">Click aquí-1</a> <br> <!-- Vincular atributos -->
         <a :href="ruta" target="_blank">Click aquí-2</a> 
+
+        <h3 v-if="cantidad == 100">usted tiene {{cantidad}} euros</h3> <!-- Condicionales -->
+        <h3 v-else-if="cantidad == 10">usted tiene {{cantidad}} dólares</h3>
+        <h3 v-else="cantidad == 1">usted tiene {{cantidad}} sol</h3>
+
+        <ul>
+            <li v-for="deporte of deportes"> el deporte {{deporte}} es genial!!</li> <!-- Iteradores -->
+            <li v-for="(deporte, index) of deportes" :key="index">{{index}} - {{deporte}}</li>  <!-- Key(llave) -->
+        </ul>
+
+        <button v-on:click="agregarCantidad">Agregar</button>
+        <button @click="disminuirCantidad(5)" :disabled="habilitar">Disminuir</button> <!-- Disabled -->
+
+        <h2 class="bg-danger text-center p-2" :class="[cantidad == 0 ? colorTexto : 'text-white']"> <!-- Clases -->
+            <p class="m-0"> Cantidad en "0"</p>
+        </h2>
+
+        <h2 :class="['text-warning']">{{txtMayuscula}}</h2> <!-- Computed (Funciones) -->
+        
     </div>
 
 
