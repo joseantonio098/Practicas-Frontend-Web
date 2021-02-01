@@ -8,6 +8,7 @@ const app = Vue.createApp({ //Versión 3
             habilitar: false,
             colorTexto: 'text-warning',
             subTitulo: 'Welcome a vue!!',
+            fecha: '(31)(01)(21)',
             ruta: 'https://www.youtube.com/channel/UCeBvCHoZXt6uGMo33BPH7oQ',
         }
     },
@@ -31,5 +32,4 @@ const app = Vue.createApp({ //Versión 3
     }
 })
 
-const mountedApp = app.mount('#app'); //Relacionamos el id="app" con la Instancia
 

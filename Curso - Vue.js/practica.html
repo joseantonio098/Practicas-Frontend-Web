@@ -32,10 +32,17 @@
         </h2>
 
         <h2 :class="['text-warning']">{{txtMayuscula}}</h2> <!-- Computed (Funciones) -->
-        
+
+        <footer-principal></footer-principal> <!-- Componentes -->
+        <footer-principal cantidad="500" :fecha="fecha"/> 
     </div>
 
 
     <script src="js/app.js"></script>
+    <script src="components/Footer.js"></script>
+
+    <script>
+        const mountedApp = app.mount('#app'); //Relacionamos el id="app" con la Instancia
+    </script>
 </body>
 </html>
