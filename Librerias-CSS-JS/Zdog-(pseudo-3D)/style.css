@@ -1,0 +1,8 @@
+.contenedor{
+    display: flex;
+}
+
+.zdog-canvas,.zdog-canvas2,.zdog-canvas3,.zdog-canvas4{
+    background-color: #c2c2c2;
+    margin-right: 20px;
+}

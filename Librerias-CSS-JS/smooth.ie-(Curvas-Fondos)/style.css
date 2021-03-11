@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bloque{
+    height: 600px;
+    overflow: hidden;
+}
+
+.titulo{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+}
+h1{
+    font-size: 60px;
+    color: white;
+    font-style: italic;
+    text-decoration: underline;
+}

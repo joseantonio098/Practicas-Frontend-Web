@@ -27,14 +27,15 @@
         <button v-on:click="agregarCantidad">Agregar</button>
         <button @click="disminuirCantidad(5)" :disabled="habilitar">Disminuir</button> <!-- Disabled -->
 
-        <h2 class="bg-danger text-center p-2" :class="[cantidad == 0 ? colorTexto : 'text-white']"> <!-- Clases -->
+        <h2 class="bg-danger text-center p-2" :class="[cantidad <= 0 ? colorTexto : 'text-white']"> <!-- Clases -->
             <p class="m-0"> Cantidad en "0"</p>
         </h2>
 
-        <h2 :class="['text-warning']">{{txtMayuscula}}</h2> <!-- Computed (Funciones) -->
+        <h2 :class="[colorTexto2]">{{txtMayuscula}}</h2> <!-- Computed (Funciones) -->
 
         <footer-principal></footer-principal> <!-- Componentes -->
         <footer-principal cantidad="500" :fecha="fecha"/> 
+
     </div>
 
 

@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+    margin: 50px;
+}
+.contenedor{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.caja{ /* Figura Inicial */
+    background-color: rgb(10, 77, 109);
+    width: 300px;
+    height: 200px;
+    margin: 20px 0px;
+}
+
+.caja1{
+    background-color: rgb(10, 77, 109);
+    width: 300px;
+    height: 200px;
+    clip-path: inset(10px 20px 10px 20px round 50px);
+}
+
+.caja2{
+    background-color: rgb(10, 77, 109);
+    width: 300px;
+    height: 200px;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.caja3{
+    background-color: rgb(10, 77, 109);
+    width: 300px;
+    height: 200px;
+    clip-path: circle(43.2% at 50% 50%);
+}
+
+.caja4{
+    background-color: rgb(10, 77, 109);
+    width: 300px;
+    height: 200px;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.caja5{
+    background-color: rgb(10, 77, 109);
+    width: 300px;
+    height: 200px;
+    clip-path: ellipse(21% 48% at 50% 50%);
+}
+
+.caja6{
+    background-color: rgb(10, 77, 109);
+    width: 300px;
+    height: 200px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+}
+
+.caja7{
+    background-color: rgb(10, 77, 109);
+    width: 300px;
+    height: 200px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
