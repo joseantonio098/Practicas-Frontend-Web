@@ -8,13 +8,11 @@
 
         <InfoCuenta moneda="Soles"/> <!-- Plantilla hijo -->
         <InfoCuenta moneda="Dólares"/> 
-
     </div>
 </template>
 
 <script>
 import InfoCuenta from './InfoCuenta';
-
 
 export default {
     components: {
@@ -27,6 +25,8 @@ export default {
             enlace : 'https://www.youtube.com/channel/UCeBvCHoZXt6uGMo33BPH7oQ/videos',
         }
     },
+    methods: {
+    }
 }
 </script>
 

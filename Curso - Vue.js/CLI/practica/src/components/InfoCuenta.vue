@@ -1,7 +1,8 @@
 <template>
     <div class="">
-        <h4>Información de la cuenta en {{pais}} - {{moneda}}</h4>
+        <h4>Información de la cuenta en {{pais}} - {{moneda}} - {{cantidad}}</h4>
         <button @click="mensaje">Click aquí {{moneda}}</button>
+        <button @click="aumentar">Aumentar Saldo</button>
     </div>
 </template>
 
@@ -13,12 +14,16 @@ export default {
     data() {
         return {
             pais : 'Perú',
+            cantidad : 100,
         }
     },
     methods: {
         mensaje() {
             alert(`tu moneda está en ${this.moneda}`)
-        }
+        },
+        aumentar(){
+            this.cantidad += 100 
+        },
     },
 }
 </script>
