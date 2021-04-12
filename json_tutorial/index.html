@@ -7,8 +7,9 @@
 </head>
 <body>
 
-    <ul id="personas"></ul>
-
+    <ul id="personas">
+        <!-- Mostrar datos.... -->
+    </ul>
 
     <script>
       
@@ -30,6 +31,7 @@
             }
         };
 
+        //GET --> Traer Datos / POST --> Enviar Datos / Delete --> Borrar Datos / PUT --> Actualizar Datos
         xhttp.open("GET", "personas.json", true);
         xhttp.send(); //Enviamos la petición      
         
