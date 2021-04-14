@@ -8,7 +8,6 @@
 
             <router-link :to="`/blog/${item.id}`"> <!-- Rutas x cada artículo -->
                 <h3 class="title">{{item.id}}- {{item.title}}</h3>
-                <p>{{item.body}}</p>
             </router-link>
         </div>
     </div>
