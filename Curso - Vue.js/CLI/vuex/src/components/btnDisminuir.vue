@@ -1,5 +1,5 @@
 <template>
-    <button @click="accionDismContador(50)">Contador --</button> 
+    <button @click="accionDismContador(10)">Contador --</button> 
 </template>
 
 <script>

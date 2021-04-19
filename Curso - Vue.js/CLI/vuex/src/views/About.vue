@@ -8,16 +8,20 @@
 
     <button @click="aumentarContador">Contador ++</button>
     <btnDisminuir />
+    <btnOperacion />
+
   </div>
 </template>
 
 <script>
-import btnDisminuir from '../components/btnDisminuir';
+import btnDisminuir from '../components/btnDisminuir'; 
+import btnOperacion from '../components/btnOperacion'; 
+
 import {mapState,mapMutations,mapActions} from 'vuex';
 
 export default {
   components: {
-    btnDisminuir,
+    btnDisminuir,btnOperacion
   },
   data() {
     return {
@@ -39,6 +43,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  button{
+    margin: 0px 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+  }
 </style>
