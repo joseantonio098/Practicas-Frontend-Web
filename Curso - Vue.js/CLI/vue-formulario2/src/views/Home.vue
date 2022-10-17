@@ -4,24 +4,20 @@
     <form action="" @submit.prevent="enviarFormulario">
       <Input :tarea="tarea"/>
     </form>
-
-    <div class="cont-view">
-      <h5 class="mt-3">Mostrar Datos:</h5>
-      <p><b>Nombre:</b> {{tarea.nombre}}</p>
-      <p><b>Categoría:</b> {{tarea.categoria}}</p>
-      <p><b>Estado:</b> {{tarea.estado}}</p>
-      <p><b>Número:</b> {{tarea.numero}} Tipo: {{typeof(tarea.numero)}}</p>
-    </div>
+    <ListadoTareas/>
   </div>
 </template>
 
 <script>
 import Input from '../components/Input';
+import ListadoTareas from '../components/ListadoTareas';
+import { mapActions } from 'vuex';
+const shortid = require('shortid'); // Generador id
 
 export default {
   name: 'Home',
   components: { 
-    Input,
+    Input, ListadoTareas
   },
   data() {
     return {
@@ -35,10 +31,15 @@ export default {
     }
   },
   methods: {
-    /* Permite limpiar formulario */
+    ...mapActions(['setTareas']),
+  
     enviarFormulario(){
+      this.tarea.id = shortid.generate(); //Generador id
+      this.setTareas(this.tarea); //Enviar datos
+    
+      //Limpiar datos
       this.tarea = {nombre: '',categoria: [],estado: '',numero: 0,}
-    }
+    },
   },
 }
 </script>

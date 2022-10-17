@@ -1,0 +1,7 @@
+npm init --y      // Crear package.json
+npm start         // Script -> "start": "node index.js"
+npm run server    // Script -> "server": "nodemon index.js"
+
+// Instalar módulos
+npm install hola-mundo-nodejs  -> Proyecto
+npm install nodemon -D  -> Ejecutar en tiempo real

@@ -1,0 +1,25 @@
+* Página principal
+https://datatables.net/
+
+* Instalación
+https://datatables.net/manual/installation
+https://datatables.net/download/
+
+* Configuraciones
+https://datatables.net/reference/option/  (Opciones)
+https://datatables.net/reference/api/  (Api)
+https://datatables.net/reference/event/  (Eventos)
+https://datatables.net/reference/button/  (Botones)
+https://datatables.net/reference/type/  (Tipos)
+
+* Manual de opciones
+https://datatables.net/manual/options  (Manual de opciones)
+
+* Ejemplos de tablas
+https://datatables.net/examples/index
+
+* Estilos de tablas
+https://datatables.net/manual/styling/
+
+* Foro
+https://datatables.net/forums/

@@ -11,6 +11,10 @@
         <input type="checkbox" v-model="tarea.categoria" value="PHP" id="catPhp" class="form-check-input">
         <label for="catPhp" class="form-check-label">PHP</label>
     </div>
+    <div class="form-check">
+        <input type="checkbox" v-model="tarea.categoria" value="CSS" id="catCss" class="form-check-input">
+        <label for="catCss" class="form-check-label">CSS</label>
+    </div>
 
     <h5 class="mt-3">* Input type RADIO:</h5> <!-- STRING_VUE -->
     <div class="form-check">
@@ -33,7 +37,7 @@ export default {
     props: {
         tarea: Object,
     },
-      computed: {
+    computed: {
     /* Deshabilita el botón del formulario */
     validarFormulario(){
       return this.tarea.nombre === '' ? true : false;

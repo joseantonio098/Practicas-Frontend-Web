@@ -1,0 +1,56 @@
+[
+    {
+      "id": "633d35743e516579bd1ac3d3",
+      "index": 0,
+      "guid": "a2f203b1-2f1b-4f2c-b690-197bb7424e26",
+      "address": "209 Gerritsen Avenue, Gloucester, American Samoa, 7919",
+      "registered": "2021-06-13T08:52:48 +05:00",
+      "latitude": -7.261676,
+      "longitude": 40.556854,
+      "tags": [
+        "ad",
+        "ut",
+        "incididunt",
+        "officia",
+        "ipsum",
+        "ea",
+        "Lorem"
+      ]
+    },
+    {
+      "id": "633d3574068f611931e5f690",
+      "index": 1,
+      "guid": "ce342ff8-89cc-4219-a15c-797627a73298",
+      "address": "273 Hudson Avenue, Jackpot, West Virginia, 8155",
+      "registered": "2016-02-19T10:25:24 +05:00",
+      "latitude": -77.963985,
+      "longitude": 135.150282,
+      "tags": [
+        "labore",
+        "in",
+        "aliquip",
+        "ea",
+        "ut",
+        "ea",
+        "cillum"
+      ]
+    },
+    {
+      "id": "633d35747b76e1964881279d",
+      "index": 2,
+      "guid": "a20bbb32-5085-4ff4-b891-74cbdc354ff8",
+      "address": "394 Herkimer Street, Santel, North Dakota, 8831",
+      "registered": "2020-09-03T10:32:34 +05:00",
+      "latitude": 63.798379,
+      "longitude": 165.382816,
+      "tags": [
+        "fugiat",
+        "ea",
+        "aliquip",
+        "deserunt",
+        "velit",
+        "ullamco",
+        "ullamco"
+      ]
+    }
+]

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos Globales */
+body{
+    @apply bg-colFondo; /* Utilidades en css*/
+    padding: 20px 30px;
+}
