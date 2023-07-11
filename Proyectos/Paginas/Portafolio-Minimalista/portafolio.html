@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portafolio - Jose Valencia </title>
+    <link rel="stylesheet" href="css/portafolio.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/css/all.min.css">
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="logo">
+                <h1> Jose Valencia </h1>
+                <p> Desarrolador Web </p>
+            </div>
+            <form action="">
+                <input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
+            </form>
+            <div class="categorias" id="categorias">
+                <a href="#" class="activo">Todos</a>
+                <a href="#">Naturaleza</a>
+                <a href="#">Ciudades</a>
+                <a href="#">Personas</a>
+                <a href="#">Animales</a>
+            </div>
+        </header>
+
+
+        <!--------------- Usando la libreria  (Muuri) ----------------->
+        <section class="grid" id="grid">
+
+            <div class="item"
+                 data-categoria="ciudades" 
+                 data-etiquetas="ciudades autos carros calles"
+                 data-descripcion="1.- Lorem ipsum dolor sit amet consectetur"> <!------- Atributos personalizados ------>
+                <div class="item-contenido">
+                    <img src="img/ciudad1.png" alt="">
+                </div>
+            </div>
+
+            <div class="item" 
+                 data-categoria="personas" 
+                 data-etiquetas="personas mujeres"
+                 data-descripcion="2.- Lorem ipsum dolor sit amet consectetur"> <!------- Atributos personalizados ------>
+                <div class="item-contenido">
+                    <img src="img/persona1.png" alt="">
+                </div>
+            </div>
+
+            <div class="item" 
+                 data-categoria="paisajes" 
+                 data-etiquetas="paisajes playa"
+                 data-descripcion="3.- Lorem ipsum dolor sit amet consectetur"> <!------- Atributos personalizados ------>
+                <div class="item-contenido">
+                    <img src="img/paisaje1.png" alt="">
+                </div>
+            </div>            
+
+            <div class="item" 
+                 data-categoria="animales" 
+                 data-etiquetas="animales leon"
+                 data-descripcion="4.- Lorem ipsum dolor sit amet consectetur"> <!------- Atributos personalizados ------>
+                <div class="item-contenido">
+                    <img src="img/animal1.png" alt="">
+                </div>
+            </div>                      
+
+            
+            <div class="item" 
+                 data-categoria="ciudades" 
+                 data-etiquetas="ciudades autos edificios"
+                 data-descripcion="5.- Lorem ipsum dolor sit amet consectetur"> <!------- Atributos personalizados ------>
+                <div class="item-contenido">
+                    <img src="img/ciudad2.png" alt="">
+                </div>
+            </div>    
+            
+            <div class="item" 
+                 data-categoria="personas" 
+                 data-etiquetas="personas mujeres"
+                 data-descripcion="6.- Lorem ipsum dolor sit amet consectetur"> <!------- Atributos personalizados ------>
+                <div class="item-contenido">
+                    <img src="img/persona2.png" alt="">
+                </div>
+            </div>            
+            
+            <div class="item" 
+                 data-categoria="naturaleza" 
+                 data-etiquetas="naturaleza plantas"
+                 data-descripcion="7.- Lorem ipsum dolor sit amet consectetur"> <!------- Atributos personalizados ------>
+                <div class="item-contenido">
+                    <img src="img/naturaleza1.png" alt="">
+                </div>
+            </div>
+
+            <div class="item" 
+                 data-categoria="animales" 
+                 data-etiquetas="animales oso panda"
+                 data-descripcion="8.- Lorem ipsum dolor sit amet consectetur"> <!------- Atributos personalizados ------>
+                <div class="item-contenido">
+                    <img src="img/animal2.png" alt="">
+                </div>
+            </div>    
+            
+            <div class="item" 
+                 data-categoria="paisajes" 
+                 data-etiquetas="paisajes montaña"
+                 data-descripcion="9.- Lorem ipsum dolor sit amet consectetur"> <!------- Atributos personalizados ------>
+                <div class="item-contenido">
+                    <img src="img/paisaje2.png" alt="">
+                </div>
+            </div>               
+            
+        </section>
+
+        <section class="overlay" id="overlay">
+            <div class="contenedor-img">
+                <button id="btn-cerrar-popup"><i class="fas fa-times"></i></button>
+                <img src="" alt="">
+            </div>
+            <p class="descripcion"></p>
+        </section>
+
+        <footer class="contenedor">
+            <div class="redes-sociales">
+                <div class="contenedor-icono">
+                    <a target='_blank' href="#" class="twitter"> <i class="fab fa-twitter"></i> </a>
+                </div>
+                <div class="contenedor-icono">
+                    <a target='_blank' href="#" class="facebook"> <i class="fab fa-facebook-f"></i> </a>
+                </div>
+                <div class="contenedor-icono">
+                    <a target='_blank' href="#" class="instagram"> <i class="fab fa-instagram"></i> </a>
+                </div>
+            </div>
+
+            <div class="creado-por">
+                <p> Sitio diseñado por <a href=""> Jose Valencia </a> @2020 </p>
+            </div>
+        </footer>
+
+        
+    </div>
+    
+    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+    <script src="js/portafolio.js"></script>
+</body>
+</html>

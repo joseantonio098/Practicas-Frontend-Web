@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./icons/style.css">
+    <title>Clon Youtube | HTML y CSS</title>
+</head>
+<body class="scroll">
+    <header class="main-header">
+        <div class="start place-center">
+            <button class="icon-menu action-button"></button>
+            <a href="./index.html">
+                <img class="logo" src="./img/logo-yt.svg" alt="Logo Youtube">
+            </a>
+        </div>
+        <!-- MIDDLE -->
+        <div class="middle place-center">
+            <form class="form-search place-center" action="#">
+                <input type="search" placeholder="Buscar" class="input">
+                <button data-tooltip="Buscar" class="submit icon-search"></button>
+            </form>
+            <button data-tooltip="Haz búsquedas por voz" class="icon-microphone action-button"></button>
+        </div>
+        <!-- END -->
+        <div class="place-center buttons-container">
+            <button data-tooltip="Crear" class="icon-camera action-button"></button>
+            <button data-tooltip="Aplicaciones de Youtube" class="icon-grid action-button"></button>
+            <button data-tooltip="Notificaciones" class="icon-bell action-button"></button>
+            
+            <div class="user">
+                <div class="user-avatar">
+                    <img src="https://diwprog.com/assets/img/DiwProgLogo.png" class="image" alt="Foto del usuario">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-sidebar scroll">
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-home"></span>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link is-active">
+                        <span class="icon icon-explore"></span>
+                        <span>Explorar</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-suscriptions"></span>
+                        <span>Suscripciones</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-yt-logo"></span>
+                        <span>Originals</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-music"></span>
+                        <span>YouTube Music</span>
+                    </a>
+                </li>
+            </ul>
+
+            <hr/>
+
+            <ul>
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-library"></span>
+                        <span>Biblioteca</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-history"></span>
+                        <span>Historial</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-square-triangle"></span>
+                        <span>Mis videos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-clock"></span>
+                        <span>Ver más tarde</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-like"></span>
+                        <span>Videos que me gustan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-down"></span>
+                        <span>Mostrar más</span>
+                    </a>
+                </li>
+            </ul>
+
+            <hr/>
+
+            <h4 class="nav-title">Suscripciones</h4>
+
+            <ul>
+                <!-- Usuario normal -->
+                <li>
+                    <a href="#" class="link is-new">
+                        <div class="user-avatar">
+                            <img src="https://avatars.githubusercontent.com/u/5506070" class="image" alt="Foto del usuario">
+                        </div>
+                        <span>WilbortER.</span>
+                    </a>
+                </li>
+
+                <!-- Usuario que subió nuevo video -->
+                <li>
+                    <a href="#" class="link is-new">
+                        <div class="user-avatar">
+                            <img src="https://avatars.githubusercontent.com/u/5506070" class="image" alt="Foto del usuario">
+                        </div>
+                        <span>EDteam</span>
+                    </a>
+                </li>
+
+                <!-- Usuario que está en vivo -->
+                <li>
+                    <a href="#" class="link is-in-live">
+                        <div class="user-avatar">
+                            <img src="https://avatars.githubusercontent.com/u/5506070" class="image" alt="Foto del usuario">
+                        </div>
+                        <span>ITM</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <div class="user-avatar">
+                            <img src="https://avatars.githubusercontent.com/u/5506070" class="image" alt="Foto del usuario">
+                        </div>
+                        <span>Empieza</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-down"></span>
+                        <span>Mostrar 94 más</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <hr/>
+
+            <h4 class="nav-title">Más de YouTube</h4>
+
+            <ul>
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-video"></span>
+                        <span>Películas</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-game"></span>
+                        <span>Videojuegos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-live"></span>
+                        <span>Directo</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-spotlight"></span>
+                        <span>Aprendizaje</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-trophy"></span>
+                        <span>Deporte</span>
+                    </a>
+                </li>
+            </ul>
+
+            <hr/>
+
+            <ul>
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-config"></span>
+                        <span>Configuración</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-flag"></span>
+                        <span>Historial de denuncias</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-question"></span>
+                        <span>Ayuda</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="link">
+                        <span class="icon icon-message"></span>
+                        <span>Enviar sugerencias </span>
+                    </a>
+                </li>
+            </ul>
+
+            <hr/>
+
+            <footer class="main-nav-footer">
+                <div class="container">
+                    <a href="#" class="link-footer">Información</a>
+                    <a href="#" class="link-footer">Prensa</a>
+                    <a href="#" class="link-footer">Derechos de autor</a>
+                    <a href="#" class="link-footer">Contactar</a>
+                    <a href="#" class="link-footer">Creadores</a>
+                    <a href="#" class="link-footer">Publicidad</a>
+                    <a href="#" class="link-footer">Desarrolladores</a>
+                </div>
+
+                <div class="container">
+                    <a href="#" class="link-footer">Términos</a>
+                    <a href="#" class="link-footer">Privacidad</a>
+                    <a href="#" class="link-footer">Política y seguridad</a>
+                    <a href="#" class="link-footer">Cómo funcina Youtube</a>
+                    <a href="#" class="link-footer">Probar funciones nuevas</a>
+                </div>
+                <p class="copyright"><a class="link-footer" href="https://wilbort.pe" target="_blank">© 2021 WilbortER LLC</a></p>
+            </footer>
+        </nav>
+    </div>
+
+    <main class="card-grid" id="card-grid">
+        
+    </main>
+
+    <template id="video-card">
+        <article class="card-video">
+            <a href="#" class="cover">
+                <img src="#" alt="" class="image">
+                <time class="time">1:37:49</time>
+            </a>
+            <div class="container flex">
+                <div class="user-avatar">
+                    <img src="#" class="image" alt="Foto del usuario">
+                </div>
+                <div class="content">
+                    <h3 class="title">
+                        <a href="#">
+                            Fallas eléctricas: CORTOCIRCUITO y ...
+                        </a>
+                    </h3>
+                    <p>Potencia HDP</p>
+                    <p class="video-information">
+                        <span class="views">100.000 Visualizaciones</span>
+                        <span>Hace 1 semana</span>
+                    </p>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <script src="./js/scripts/cards.js" type="module"></script>
+</body>
+</html>

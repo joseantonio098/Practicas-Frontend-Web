@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./icons/style.css">
+    <title>Video | Clon Youtube | HTML y CSS</title>
+</head>
+<body class="video-page scroll">
+    <header class="main-header">
+        <div class="start place-center">
+            <button class="icon-menu action-button"></button>
+            <a href="./index.html">
+                <img class="logo" src="./img/logo-yt.svg" alt="Logo Youtube">
+            </a>
+        </div>
+        <!-- MIDDLE -->
+        <div class="middle place-center">
+            <form class="form-search place-center" action="#">
+                <input type="search" placeholder="Buscar" class="input">
+                <button data-tooltip="Buscar" class="submit icon-search"></button>
+            </form>
+            <button data-tooltip="Haz búsquedas por voz" class="icon-microphone action-button"></button>
+        </div>
+        <!-- END -->
+        <div class="place-center buttons-container">
+            <button data-tooltip="Crear" class="icon-camera action-button"></button>
+            <button data-tooltip="Aplicaciones de Youtube" class="icon-grid action-button"></button>
+            <button data-tooltip="Notificaciones" class="icon-bell action-button"></button>
+            
+            <div class="user">
+                <div class="user-avatar">
+                    <img src="https://avatars.githubusercontent.com/u/5506070" class="image" alt="Foto del usuario">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="video-page-grid">
+        <main class="video-column">
+            <section class="video-player">
+                <iframe class="video" src="https://www.youtube.com/embed/YlZN-ie1-i8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h1 class="title">
+                    2-Hour Study With Me [Moonlight Jazz🌙] 45/15 Pomodoro
+                </h1>
+                <div class="actions">
+                    <p class="video-information">
+                        <span class="views">100.000 visualizaciones</span>
+                        <span>29 jun 2021</span>
+                    </p>
+                    <div class="buttons-container">
+                        <div class="buttons-container likes">
+                            <button 
+                                data-tooltip="Me gusta este video"
+                                class="action-button has-text">
+                                <span class="icon icon-like-video"></span>
+                                <span>18.000</span>
+                            </button>
+                            <button 
+                                data-tooltip="No me gusta este video"
+                                class="action-button has-text">
+                                <span class="icon icon-dislike-video"></span>
+                                <span>ninguno xD</span>
+                            </button>
+                        </div>
+                        <button 
+                            data-tooltip="Compartir"
+                            class="action-button has-text">
+                            <span class="icon icon-share"></span>
+                            <span>Compatir</span>
+                        </button>
+                        <button 
+                            data-tooltip="Guardar"
+                            class="action-button has-text">
+                            <span class="icon icon-add-list"></span>
+                            <span>Guardar</span>
+                        </button>
+                        <button class="action-button icon icon-horizontal-dots">
+                        </button>
+                    </div>
+                </div>
+                <hr class="border"/>
+            </section>
+
+            <section class="video-player-information flex">
+                <div class="user">
+                    <div class="user-avatar">
+                        <img src="https://avatars.githubusercontent.com/u/5506070" class="image" alt="Foto del usuario">
+                    </div>
+                </div>
+                <div class="content">
+                    <header class="header flex">
+                        <div>
+                            <a href="#" class="channel-name" data-tooltip="WilbortER">WilbortER</a>
+                            <p class="subs-count">500.000 suscriptores</p>
+                        </div>
+                        <button class="button">Suscribirme</button>
+                    </header>
+                    <p class="caption rows-text-3">
+                        🌙 This 2 Hour Study With Me includes an entirely new set of jazz music that will be added on to the livestream. 
+                        I hope you all are staying safe and are being productive! Good luck with your studies!
+                        -----------------------------------------------------------------------------------------
+                        📚My Study Space Set Up for 2021📚
+                        🌙 This 2 Hour Study With Me includes an entirely new set of jazz music that will be added on to the livestream. 
+                        I hope you all are staying safe and are being productive! Good luck with your studies!
+                        -----------------------------------------------------------------------------------------
+                        📚My Study Space Set Up for 2021📚 
+                        -Link to my amazon affiliate links, none are sponsored-
+                    </p>
+                    <button class="action-button has-text">
+                        <span>Mostrar más</span>
+                    </button>
+                </div>
+            </section>
+
+            <hr class="big"/>
+
+            <section class="comments-section">
+                <header class="comments-information buttons-container">
+                    <p>150 Comentarios</p>
+                    <button class="action-button has-text">
+                        <span class="icon icon-filter"></span>
+                        <span>Ordenar por</span>
+                    </button>
+                </header>
+                <div class="comment-form flex">
+                    <div class="user">
+                        <div class="user-avatar">
+                            <img src="https://avatars.githubusercontent.com/u/5506070" class="image" alt="Foto del usuario">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="input" contenteditable></div>
+                        <div class="buttons-container">
+                            <button class="button link">Cancelar</button>
+                            <button class="button" disabled>Comentar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments-grid" id="comments-grid">
+                    <!--  AQUI SE REDERIZA LOS COMENTARIOS
+                    <article class="comment flex">
+                        <div class="user">
+                            <div class="user-avatar">
+                                <img src="https://avatars.githubusercontent.com/u/5506070" class="image" alt="Foto del usuario">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <header class="header">
+                                <a href="#" class="name"><b>Wilbort Encomenderos</b></a>
+                                <time class="time">Hace una semana</time>
+                            </header>
+                            <p class="text rows-text-3">
+                                0:00 Oliver Heldens vs. Wamdue Project vs. Criminal Vibes vs. Madonna - Koala vs. King Of My Castle vs. Calabria vs. Hung Up (Oliver Heldens Mashup)  STRICTLY / WARNER BROS. / LOUDBIT / SPINNIN'
+                                1:00 Tiësto & Oliver Heldens - Wombass MUSICAL FREEDOM
+                                2:51 Madcon - Beggin' (Acappella) UMG
+                                4:40 Dr. Kucho! & Gregor Salto & Oliver Heldens vs. Tag Team - Can't Stop Playing vs. Whoomp! (There It Is) (Oliver Heldens Mashup)  LIFE / SPINNIN'
+                            </p>
+                            <footer class="buttons-container">
+                                <button class="action-button has-text" data-tooltip="Me gusta">
+                                    <span class="icon icon-like-video"></span>
+                                    <span class="text">98</span>
+                                </button>
+                                <button class="action-button has-text" data-tooltip="No me gusta">
+                                    <span class="icon icon-dislike-video"></span>
+                                </button>
+                                <button class="action-button has-text">
+                                    <span class="text">Responder</span>
+                                </button>
+                            </footer>
+                        </div>
+                    </article> -->
+                </div>
+            </section>
+        </main>
+
+        <aside class="cards-sidebar" id="card-grid">
+            <!--  AQUI SE RENDERIZA LOS VIDEOS EN EL SIDEBAR
+            <article class="card-video in-sidebar">
+                <a href="#" class="cover">
+                    <img class="image"
+                        src="https://picsum.photos/id/33/520/300" 
+                        alt="Poster de video">
+                    <time class="time">5:05</time>
+                </a>
+                <div class="content">
+                    <h3 class="title rows-text-2">
+                        <a href="./video.html">Este es el título del video</a>
+                    </h3>
+                    <a href="https://wilbort.pe" target="_blank">WilbortER</a>
+                    <p class="video-information">
+                        <span class="views">100.520 visualizaciones</span>
+                        <span>Hace 2 semanas</span>
+                    </p>
+                </div>
+            </article> -->
+        </aside>
+    </div>
+    <script src="./js/scripts/comment.js" type="module"></script>
+    <script src="./js/scripts/cards.js" type="module"></script>
+</body>
+</html>
