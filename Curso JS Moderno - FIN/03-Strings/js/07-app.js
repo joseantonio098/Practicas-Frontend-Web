@@ -1,15 +1,12 @@
-const producto = 'Monitor 20 Pulgadas ';
-console.log(producto.toUpperCase());
+// .toUpperCase() te va a permitir cambiar un texto a todo mayusculas
+const producto = 'Monitor 24 pulgadas ';
+console.log(producto.toUpperCase() );
 
+// .toLowerCase()
+console.log(producto.toLowerCase() );
 
-console.log(producto.toLowerCase());
+// .toString()
+const cantidad = 200;
+console.log(cantidad);
+console.log(cantidad.toString());
 
-
-const email = "CORREO@CORREO.COM";
-
-console.log(email.toLowerCase());
-
-
-const precio = 300;
-console.log(precio);
-console.log(precio.toString());

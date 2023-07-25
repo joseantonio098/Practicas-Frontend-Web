@@ -1,47 +1,78 @@
+
+
 function Cliente(nombre, saldo) {
     this.nombre = nombre;
     this.saldo = saldo;
 }
 
-Cliente.prototype.tipoCliente = function() {
+// Obtener Tipo de Cliente
+Cliente.prototype.tipoCliente = function()  { // Con prototypes tienes que utilizar function, function buscara en el mismo objeto mientras que un arrow function irá hacia la ventana global marcandote un undefined
     let tipo;
-
     if(this.saldo > 10000) {
         tipo = 'Gold';
     } else if(this.saldo > 5000) {
         tipo = 'Platinum';
     } else {
-        tipo = 'Normal';
+        tipo  = 'Normal';
     }
     return tipo;
 }
 
-Cliente.prototype.nombreClienteSaldo = function() {
-    return `Nombre: ${this.nombre}, Saldo: ${this.saldo}, Tipo Cliente: ${this.tipoCliente() }`
+// Otro Prototipo para el nombre completo
+Cliente.prototype.nombreClienteSaldo = function()  {
+    return `Nombre: ${this.nombre}, Saldo ${this.saldo}, Tipo Cliente:  ${this.tipoCliente()} `;
 }
 
-Cliente.prototype.retiraSaldo = function(retira) {
-    this.saldo -= retira
+Cliente.prototype.retiraSaldo = function(retiro)  {
+    this.saldo -= retiro;
 }
 
+// Instanciarlo
+const pedro = new Cliente('Pedro', 6000);
+
+
+// Acceder a los prototypes
+console.log ( pedro.tipoCliente() );
+
+// Un prototype que accede a otros prototypes
+console.log ( pedro.nombreClienteSaldo() );
+
+// reescribir un valor
+pedro.retiraSaldo(2000);
+
+// comprobar saldo
+console.log ( pedro.nombreClienteSaldo());
+
+
+// NUEVO: Heredar Prototypes
 
 
 
+// Crear 2 objetos nuevos...
 function Persona(nombre, saldo, telefono) {
+    // this.nombre = nombre;
+    // this.saldo = saldo;
+    // this.telefono = telefono;
+
+    // Debe ser:
     Cliente.call(this, nombre, saldo);
     this.telefono = telefono;
 }
 
+// Heredar la función ( Antes de Instanciarlo )
 Persona.prototype = Object.create( Cliente.prototype );
+
+// Heredar el constructor
 Persona.prototype.constructor = Cliente;
 
 // Instanciarlo
-const juan = new Persona('Juan', 5000, 10920192);
+const juan = new Persona('Juan', 6000, 1120192);
 console.log(juan);
-console.log(juan.nombreClienteSaldo());
 
+
+// Crear Prototype solo para Persona...
 Persona.prototype.mostrarTelefono = function() {
-    return `El teléfono de esta persona es ${this.telefono}`
+    return `El teléfono de este cliente es: ${this.telefono}`
 }
-
-console.log(juan.mostrarTelefono() )
+console.log ( juan.nombreClienteSaldo() );
+console.log ( juan.mostrarTelefono() );

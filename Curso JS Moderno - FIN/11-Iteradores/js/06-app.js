@@ -1,26 +1,23 @@
-// forEach
+// Bueno veamos otros iteradores que existen en JavaScript, previamente ya habiamos visto forEach y Map, vamos a verlos en este video y sus diferencias...
 
-const pendientes = ['Tarea', 'Comer', 'Proyecto', 'Estudiar JavaScript'];
+let pendientes = ['Tarea', 'Comer', 'Proyecto', 'Estudiar JavaScript'];
 
-pendientes.forEach( (pendiente, indice) => {
-    console.log(`${indice} : ${pendiente}`)
-})
+// Recorrer por un Foreach
+pendientes.forEach( (pendiente, index) =>  {
+    console.log(`${index} : ${pendiente}`);
+});
 
+// Recuerda que como es una sola linea, la llave es opcional...
+
+// Recorrer arreglo de objetos
 const carrito = [
-    { nombre: 'Monitor 27 Pulgadas', precio: 500 },
-    { nombre: 'Televisión', precio: 100 },
-    { nombre: 'Tablet', precio: 200 },
-    { nombre: 'Audifonos', precio: 300 },
-    { nombre: 'Teclado', precio: 400 },
-    { nombre: 'Celular', precio: 700 },
-]
+    {id: 1, producto: 'Libro' },
+    {id: 2, producto: 'Camisa'},
+    {id: 3, producto: 'Disco'}
+];
 
-const nuevoArreglo = carrito.forEach( producto => producto.nombre);
+carrito.forEach( producto =>  {
+    console.log(`Agregaste ${producto}`);
+});
 
-
-const nuevoArreglo2 = carrito.map( (producto) => producto.nombre);
-
-
-console.log(nuevoArreglo);
-console.log(nuevoArreglo2);
-
+// Lo mismo aplica para los maps, la sintaxis es la misma, solo recuerda, el map te crea un nuevo arreglo, si solo deseas recorrer los elementos utiliza el Foreach, si requieres crear un nuevo arreglo, sin duda el map sera mejor...

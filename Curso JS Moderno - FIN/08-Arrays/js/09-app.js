@@ -1,17 +1,19 @@
+// De aquí en adelante estaremos viendo una serie de métodos de arreglos
 const carrito = [
-    { nombre: 'Monitor 27 Pulgadas', precio: 500 },
-    { nombre: 'Televisión', precio: 100 },
-    { nombre: 'Tablet', precio: 200 },
-    { nombre: 'Audifonos', precio: 300 },
-    { nombre: 'Teclado', precio: 400 },
-    { nombre: 'Celular', precio: 700 },
+    { nombre: 'Monitor 20 Pulgadas', precio: 500},
+    { nombre: 'Televisión 50 Pulgadas', precio: 700},
+    { nombre: 'Tablet ', precio: 300},
+    { nombre: 'Audifonos', precio: 200},
+    { nombre: 'Teclado', precio: 50},
+    { nombre: 'Celular', precio: 500},
 ]
 
-
-for(let i = 0; i < carrito.length; i++ ) {
-    console.log(`${carrito[i].nombre} - Precio: ${carrito[i].precio }` );
+// Recorrer un arreglo de la forma tradicional y mostrar su contenido...
+for(let i = 0; i < carrito.length; i++ ){
+    console.log( `Articulo: ${ carrito[i].nombre } Precio: $ ${carrito[i].precio} ` )
 }
 
+// ForEach
 carrito.forEach( function(producto) {
-    console.log(`${producto.nombre} - Precio: ${producto.precio }` );
-} )
+    console.log( `Articulo: ${ producto.nombre } Precio: $ producto.precio} ` )
+})

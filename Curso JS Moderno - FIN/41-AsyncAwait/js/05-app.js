@@ -1,21 +1,33 @@
-const url = 'https://picsum.photos/list';
+// Async Await Con una API...
 
 document.addEventListener('DOMContentLoaded', obtenerDatos);
 
 
-function obtenerDatos() {
-    fetch(url)
-        .then(respuesta => respuesta.json())
-        .then(resultado => console.log(resultado))
-        .catch(error => console.log(error));
+// function obtenerDatos() {
+//     fetch('https://picsum.photos/list') 
+//         .then( respuesta => {
+//             return respuesta.json()
+//         }) 
+//         .then(resultado => {
+//             mostrarHTML(resultado);
+//             console.log(resultado)
+//         })
+// }
+ 
+async function obtenerDatos() {
+    const resultado = await fetch('https://picsum.photos/list');
+    const respuesta = await resultado.json();
+    console.log(respuesta);
+
 }
 
 async function obtenerDatos() {
     try {
-        const respuesta = await fetch(url);
-        const resultado = await respuesta.json();
-        console.log(resultado);
+        const resultado = await fetch('https://picsum.photos/list');
+        const respuesta = await resultado.json();
+        console.log(respuesta);
     } catch (error) {
         console.log(error);
     }
+
 }

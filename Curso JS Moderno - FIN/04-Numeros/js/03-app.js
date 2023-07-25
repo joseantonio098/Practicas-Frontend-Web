@@ -1,42 +1,27 @@
+// Math es parte de la ventana global de JavaScript, tiene una serie de operaciones que pueden ser muy útiles y algunas actuan de forma algo extraña, asi que vamos a verlas.
 
-let resultado;
+let resultado; 
 
-// PI
+// Pi
 resultado = Math.PI;
-
-// Redondear
-resultado = Math.round(2.8);
-resultado = Math.round(2.2);
-resultado = Math.round(2.6);
+// redondeo
 resultado = Math.round(2.5);
-resultado = Math.round(2.4);
-
-// Redondear hacia arriba
-resultado = Math.ceil(2.1);
-
-// Redondear hacia abajo
-resultado = Math.floor(2.9);
-
-// Raiz Cuadrada
+// redondeo abajo o arriba (ceil o floor )
+resultado = Math.ceil(2.2);
+// Raiz cuadrada
 resultado = Math.sqrt(144);
-
-// Absoluto
-resultado = Math.abs(-500);
-
+// Abssoluto
+resultado = Math.abs(-300);
 // Potencia
-resultado = Math.pow(2, 4);
-
+resultado = Math.pow(8, 3);
 // Minimo
-resultado = Math.min(3,5, 1, 12, -3);
-
-// Maximo
-resultado = Math.max(3,5, 1, 12, -3);
-
+resultado = Math.min(3,5,1,2,9,4,2, -3);
+// Max
+resultado = Math.max(4,1,21,4,15,5,11,5);
 // Aleatorio
-// resultado = Math.random() * 20 ;
-
-// Aleatorio dentro de un rango...
-resultado = Math.floor( Math.random() * 30 );
+resultado = Math.random();
+// Aleatorio dentro de un rango:
+resultado =  Math.floor( Math.random() * 30 );
 
 
 console.log(resultado);

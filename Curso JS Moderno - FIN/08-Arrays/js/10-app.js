@@ -1,21 +1,22 @@
 const carrito = [
-    { nombre: 'Monitor 27 Pulgadas', precio: 500 },
-    { nombre: 'Televisión', precio: 100 },
-    { nombre: 'Tablet', precio: 200 },
-    { nombre: 'Audifonos', precio: 300 },
-    { nombre: 'Teclado', precio: 400 },
-    { nombre: 'Celular', precio: 700 },
+    { nombre: 'Monitor 20 Pulgadas', precio: 500},
+    { nombre: 'Televisión 50 Pulgadas', precio: 700},
+    { nombre: 'Tablet ', precio: 300},
+    { nombre: 'Audifonos', precio: 200},
+    { nombre: 'Teclado', precio: 50},
+    { nombre: 'Celular', precio: 500},
 ]
 
-const nuevoArreglo = carrito.map( function(producto) {
-    return `${producto.nombre} - Precio: ${producto.precio }` ;
-} )
+// Muy similar al forEach existe un array metod llamado map, la diferencia es que map te crea un array nuevo...
 
 
-const nuevoArreglo2 = carrito.forEach( function(producto) {
-    return `${producto.nombre} - Precio: ${producto.precio }` ;
-} )
+const nuevoArray = carrito.map( function(producto) {
+   return  `Articulo: ${ producto.nombre } Precio: $ producto.precio} `;
+})
 
+const nuevoArray2 = carrito.forEach( function(producto) {
+    return  `Articulo: ${ producto.nombre } Precio: $ producto.precio} `;
+ })
 
-console.log(nuevoArreglo);
-console.log(nuevoArreglo2);
+console.log(nuevoArray);
+console.log(nuevoArray2);

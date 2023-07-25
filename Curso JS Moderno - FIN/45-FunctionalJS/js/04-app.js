@@ -1,3 +1,6 @@
+
+
+// Utilizando MAP
 const carrito = [
     { nombre: 'Monitor 20 Pulgadas', precio: 500},
     { nombre: 'Televisión 50 Pulgadas', precio: 700},
@@ -10,8 +13,10 @@ const carrito = [
 ];
 
 const obtenerNombres = producto => {
-    return producto.nombre;
-}
+    return producto.nombre
+} 
 
-const resultado = carrito.map( obtenerNombres );
+const resultado = carrito.map(obtenerNombres);
 console.log(resultado);
+
+// Y hay muchos otros ejemplos de programación Funcional, en el sig video veamos otros tips para hacer mejor tu código...

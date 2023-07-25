@@ -1,18 +1,27 @@
+// En este video estaremos viendo eventos que ocurren con el mouse
+
 const nav = document.querySelector('.navegacion');
 
-// registrar un evento
+
+// vamos a registrar el eventListener para el nav..
+
+nav.addEventListener('mouseenter', () => {
+    console.log('entrando a navegacion')
+
+    nav.style.backgroundColor = 'white';
+});
+
 nav.addEventListener('mouseout', () => {
     console.log('saliendo de la navegacion');
 
     nav.style.backgroundColor = 'transparent';
 })
 
-nav.addEventListener('dblclick', () => {
-    console.log('Entrando en la navegacion');
-    nav.style.backgroundColor = 'white';
-})
 
-// mousedown - similar al click
-// click 
-// dblclick = doble click
-// mouseup - cuando sueltas el mouse
+// otros eventos abarcan...
+
+// mousedown - // cuando presionamos
+// click - similar, de hecho es probablemente el más utilizado..
+// dbclick - doble click como cuando quieres abrir un archivo
+// mouseup - al soltar
+// 

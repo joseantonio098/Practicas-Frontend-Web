@@ -1,30 +1,31 @@
-import { obtenerCliente, editarCliente } from './API.js';
-import { mostrarAlerta, validar } from './funciones.js';
+import {obtenerCliente, editarCliente } from './API.js';
+import { mostrarAlerta } from './funciones.js';
 
 (function() {
 
-    // Campos del formulario
+
     const nombreInput = document.querySelector('#nombre');
     const emailInput = document.querySelector('#email');
-    const empresaInput = document.querySelector('#empresa');
     const telefonoInput = document.querySelector('#telefono');
+    const empresaInput = document.querySelector('#empresa');
     const idInput = document.querySelector('#id');
 
     document.addEventListener('DOMContentLoaded', async () => {
+        // Verificar si el cliente existe
         const parametrosURL = new URLSearchParams(window.location.search);
-
         const idCliente = parseInt( parametrosURL.get('id') );
-
-        const cliente = await obtenerCliente(idCliente);
+        
+        const cliente = await obtenerCliente(idCliente)
         mostrarCliente(cliente);
-
-        // Submit al formulario
+       
+        // registra el formulario
         const formulario = document.querySelector('#formulario');
         formulario.addEventListener('submit', validarCliente);
+       
     });
 
     function mostrarCliente(cliente) {
-        const { nombre, empresa, email, telefono, id } = cliente;
+        const { nombre, empresa, email, telefono, id} = cliente;
 
         nombreInput.value = nombre;
         empresaInput.value = empresa;
@@ -33,26 +34,27 @@ import { mostrarAlerta, validar } from './funciones.js';
         idInput.value = id;
     }
 
-    function validarCliente(e) {
+
+    async function validarCliente(e) {
         e.preventDefault();
-        
         const cliente = {
-            nombre: nombreInput.value,
-            email: emailInput.value,
+            nombre: nombreInput.value, 
+            email: emailInput.value, 
             telefono: telefonoInput.value,
-            empresa: empresaInput.value, 
+            empresa: empresaInput.value,
             id: parseInt(idInput.value)
         }
-        
-        if( validar(cliente)) {
-            // Mostrar mensaje
+        if( validar(cliente) ) {
             mostrarAlerta('Todos los campos son obligatorios');
             return;
         }
 
-        // Reescribe el objeto
-        editarCliente(cliente);
-
+        await editarCliente(cliente);
+        window.location.href = 'index.html';
     }
 
+
+    function validar(obj) {
+        return !Object.values(obj).every(element => element !== '') ;
+    }
 })();

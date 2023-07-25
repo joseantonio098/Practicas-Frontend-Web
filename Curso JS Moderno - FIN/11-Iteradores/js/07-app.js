@@ -1,19 +1,12 @@
-const pendientes = ['Tarea', 'Comer', 'Proyecto', 'Estudiar JavaScript'];
+// En este video veremos for of...
 
-const carrito = [
-    { nombre: 'Monitor 27 Pulgadas', precio: 500 },
-    { nombre: 'Televisión', precio: 100 },
-    { nombre: 'Tablet', precio: 200 },
-    { nombre: 'Audifonos', precio: 300 },
-    { nombre: 'Teclado', precio: 400 },
-    { nombre: 'Celular', precio: 700 },
-]
+// For of no es como un for tradicional que ejecuta una pieza de código mientras una condición sea verdadera, este ejecuta mientras haya elementos por iterrar como puede ser un arreglo y otros llamados Maps y Sets que veremos más adelante...
 
-for( let pendiente of pendientes ) {
+let pendientes = ['Tarea', 'Comer', 'Proyecto', 'Estudiar JavaScript'];
+
+for (let pendiente of pendientes) {
     console.log(pendiente);
 }
 
+// Sin duda una forma más sencilla que un foreach y un for no?
 
-for( let producto of carrito) {
-    console.log(producto.nombre)
-}

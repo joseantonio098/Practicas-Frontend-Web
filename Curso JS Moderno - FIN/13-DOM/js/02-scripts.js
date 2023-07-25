@@ -1,18 +1,21 @@
-// Seleccionar elementos por su clase...
+// En este video estaremos viendo como seleccionar elementos por su clase...
 
-const header = document.getElementsByClassName('header');
+// Seleccionando el header...
+
+                // Todos tus selectores inician con document...
+const header = document.getElementsByClassName('header'); // Es muy importante las mayusculas y minusculas...
 console.log(header);
 
-
-const hero = document.getElementsByClassName('hero');
+const hero = document.getElementsByClassName('contenido-hero');
 console.log(hero);
 
 
-// Si las clases existen más de 1 vez
+// Como las classes se pueden repetir, obviamente todas las coincidencias de classes se asignaran a contenedores.
 const contenedores = document.getElementsByClassName('contenedor');
 console.log(contenedores);
 
 
-// Si una clase no existe
+// Si una clase no existe, no va a retornar nada...
 const noExiste = document.getElementsByClassName('no-existe');
 console.log(noExiste);
+

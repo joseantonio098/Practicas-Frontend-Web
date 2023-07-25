@@ -1,7 +1,8 @@
-// Constructor Pattern
+// Constructor Pattern es cuando utilizamos una clase base 
+
 
 class Persona {
-    constructor(nombre, email) {
+    constructor(nombre, email, empresa) {
         this.nombre = nombre;
         this.email = email;
     }

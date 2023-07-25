@@ -13,9 +13,8 @@ parrafo2.classList.add('titulo');
 const parrafo3 = document.createElement('p');
 parrafo3.textContent = '$800 por persona';
 parrafo3.classList.add('precio');
-parrafo3.onclick = function() {
-    nuevaFuncion(1)
-}
+
+parrafo3.onclick = nuevaFuncion(1);
 
 // crear el div...
 const info = document.createElement('div');
@@ -23,6 +22,7 @@ info.classList.add('info');
 info.appendChild(parrafo1)
 info.appendChild(parrafo2)
 info.appendChild(parrafo3);
+
 
 // Vamos a crear la imagen
 const imagen = document.createElement('img');
@@ -45,5 +45,5 @@ contenedor.appendChild(contenedorCard); // al inicio info
 
 
 function nuevaFuncion(id) {
-    console.log('desde nueva función', id)
+    console.log('click..', id)
 }

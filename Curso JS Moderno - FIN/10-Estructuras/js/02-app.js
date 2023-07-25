@@ -1,19 +1,22 @@
-const puntaje = 1000;
-const puntaje2 = "1000";
+// Veamos otras comparaciones
 
-console.log(typeof puntaje)
-console.log(typeof puntaje2)
 
-// if(puntaje != 1000) { // != diferente == igual a
-//     console.log('si! es diferente')
-// } 
-
-if(puntaje !== "1000") { // != diferente == igual a
-    console.log('Si es diferente!')
+// No es igual
+if(puntaje != 1000) {
+    console.log("Si! es diferente!");
+}  else {
+    console.log("No, no es diferente");
+}
+// comparador estricto de tipo y valor
+if(puntaje === 1000) {
+    console.log("Si es igual!");
 } else {
-    console.log('No no es diferente')
+    console.log("No no es igual");
 }
 
-// ==    Operador que no es estrictor
-// ===   Operador Estricto
-
+// comparador estricto de tipo y valor
+if(puntaje !== 1000) {
+    console.log("Si es DIFERENTE (ESTRICTO) !");
+} else {
+    console.log("No no es igual");
+}

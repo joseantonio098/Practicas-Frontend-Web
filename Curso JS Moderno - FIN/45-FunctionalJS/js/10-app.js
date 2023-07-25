@@ -1,59 +1,55 @@
+// Composition
 
-const obtenerNombre = info => ({
+const obtenerNombre = (info) => ({
     mostrarNombre() {
         console.log(`Nombre: ${info.nombre}`);
     }
 });
-
-const guardarEmail = info => ({
+const guardarEmail = (info) => ({
     agregarEmail(email) {
         console.log(`Guardando email en: ${info.nombre}`);
         info.email = email;
     }
 })
 
-const obtenerEmail = info => ({
+const obtenerEmail = (info) => ({
     mostrarEmail() {
         console.log(`Correo: ${info.email}`);
     }
-})
-
-const obtenerEmpresa = info => ({
+});
+const obtenerEmpresa = (info) => ({
     mostrarEmpresa() {
         console.log(`Empresa: ${info.empresa}`);
     }
-})
-
-const obtenerPuesto = info => ({
+});
+const obtenerPuesto = (info) => ({
     mostrarPuesto() {
-        console.log(`Empresa: ${info.puesto}`);
+        console.log(`Puesto: ${info.puesto}`);
     }
-})
+});
 
 function Cliente(nombre, email, empresa) {
     let info = {
-        nombre,
+        nombre, 
         email, 
         empresa
     }
-
     return Object.assign(
-        info,
+        info, 
         obtenerNombre(info),
         guardarEmail(info),
-        obtenerEmail(info),
+        obtenerEmail(info), 
         obtenerEmpresa(info)
     )
 }
 function Empleado(nombre, email, puesto) {
     let info = {
-        nombre,
+        nombre, 
         email, 
         puesto
     }
-
     return Object.assign(
-        info,
+        info, 
         obtenerNombre(info),
         guardarEmail(info),
         obtenerEmail(info),
@@ -61,16 +57,14 @@ function Empleado(nombre, email, puesto) {
     )
 }
 
-const cliente = Cliente('Juan', null, 'Código Con Juan');
+const cliente = Cliente('Juan', null, 'Udemy');
 cliente.mostrarNombre();
 cliente.agregarEmail('cliente@cliente.com');
-cliente.mostrarEmail();
-cliente.mostrarEmpresa();
-
-console.log('==========')
+cliente.mostrarEmail()
+cliente.mostrarEmpresa()
 
 const empleado = Empleado('Pedro', null, 'Programador');
 empleado.mostrarNombre();
 empleado.agregarEmail('empleado@empleado.com');
-empleado.mostrarEmail();
-empleado.mostrarPuesto();
+empleado.mostrarEmail()
+empleado.mostrarPuesto()

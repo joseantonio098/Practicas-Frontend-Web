@@ -1,29 +1,26 @@
-function crearIterador(carrito) {
 
+// Iterators
+function crearIterador(carrito) {
     let i = 0;
 
     return {
         siguiente: () => {
-            const fin = ( i >= carrito.length );
-            const valor = !fin ?  carrito[i++]  : undefined ;
+            let fin = (i >= carrito.length);
+            let valor = !fin ? carrito[i++] : undefined;
 
             return {
-                fin,
-                valor
-            }
-
+                fin: fin,
+                valor: valor
+            };
         }
-    }
+    };
 }
+const carrito = ['Producto 1', 'Producto 2', 'Producto 3', 'Producto 4'];
 
-const carrito = ['Producto 1', 'Producto 2', 'Producto 3', 'Producto Nuevo'];
-
-// Utilizar el iterador
 const recorrerCarrito = crearIterador(carrito);
 
-
-console.log(recorrerCarrito.siguiente());
-console.log(recorrerCarrito.siguiente());
-console.log(recorrerCarrito.siguiente());
-console.log(recorrerCarrito.siguiente());
-console.log(recorrerCarrito.siguiente());
+console.log(recorrerCarrito.siguiente() );
+console.log(recorrerCarrito.siguiente() );
+console.log(recorrerCarrito.siguiente() );
+console.log(recorrerCarrito.siguiente() );
+console.log(recorrerCarrito.siguiente() );

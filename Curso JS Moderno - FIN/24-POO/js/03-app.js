@@ -1,37 +1,50 @@
-class Cliente {
-    constructor(nombre, saldo) {
+// De la misma forma que puedes heredar un constructor con Prototoypes y sus métodos, también puedes heredar una clase, es una de las caracteristica que hhay en POO
+
+class Cliente { 
+
+    constructor( nombre, saldo ) {
         this.nombre = nombre;
         this.saldo = saldo;
     }
-
-    mostrarInformacion() {
-        return `Cliente: ${this.nombre}, tu saldo es de ${this.saldo}`;
+    imprimirSaldo() {
+        return `Hola ${this.nombre}, tu saldo es: ${this.saldo}`;
     }
 
-    static bienvenida() {
-        return `Bienvenido al cajero`
+    retiraSaldo(retiro) {
+        this.saldo -= retiro;
+    }
+    static bienvenida(){
+        return `Bienvenido al cajero`;
     }
 }
 
-// Herencia
+// NUEVO :
 class Empresa extends Cliente {
-    constructor(nombre, saldo, telefono, categoria) {
-        super( nombre, saldo );
+    constructor(nombre, saldo, telefono, tipo) {
+        // Va hacia el constructor del padre
+        super(nombre, saldo);
+        // otros atributos se declaran fuera
         this.telefono = telefono;
-        this.categoria = categoria;
+        this.tipo = tipo;
     }
 
-    static bienvenida() { // reescribir un método
-        return `Bienvenido al cajero de empresas`
+    static bienvenida(mensaje){ // Reescribir un método...
+        return `Bienvenido al cajero para empresas`;
     }
 }
 
 
-const juan = new Cliente('Juan', 400);
-const empresa = new Empresa('Código con juan', 500, 1091391, 'Aprendizaje en Línea');
-console.log(empresa);
-console.log(empresa.mostrarInformacion())
 
+const pedro = new Cliente('Pedro', 3000);
+console.log(pedro);
+console.log(pedro.imprimirSaldo() );
 
-console.log(Cliente.bienvenida());
-console.log(Empresa.bienvenida());
+// Heredando y creando una instancia de empresa
+const empresa = new Empresa('Empresa1', 10000, 10290193, 'Construccion');
+
+// Debido a que heredamos podemos acceder a imprimirSaldo
+console.log(empresa.imprimirSaldo() );
+
+// Acceder al statico sin instanciar de ambos
+console.log(Empresa.bienvenida() );
+console.log(Cliente.bienvenida() );

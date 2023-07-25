@@ -1,15 +1,14 @@
-const producto = 'Monitor 20 Pulgadas';
+// Veamos algunos métodos existentes en los strings o cadenas de Texto:
 
-console.log(producto);
+const producto = 'Monitor 20 Pulgadas ';
+const precio = '30 USD';
 
-// Conocer la cantidad de letras de la cadena de texto
-console.log(producto.length);
+console.log(producto.length); // Conocer la extensión de una cadena, length es de los muy pocos métodos que no usan () y es más que nada porque no es un método como tal sino una propiedad.
 
+// IndexOf
+console.log(producto.indexOf("Pulgadas")) // Nos dirá que posición tiene el texto en caso de encontrarlo
+console.log(producto.indexOf('Tablet')); // -1 Significa que no lo pudo encontrar
 
-
-// console.log(producto.indexOf('Tablet'));
-
-
-console.log(producto.includes('Tablet'));
-console.log(producto.includes('Monitor'));
-console.log(producto.includes('monitor'));
+// Includes
+console.log(producto.includes('Monitor')); // Conocer si un texto existe
+console.log(producto.includes('monitor')); // Conocer si un texto existe

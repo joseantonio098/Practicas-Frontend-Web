@@ -1,133 +1,124 @@
-// Variables
-const btnEnviar = document.querySelector('#enviar');
-const btnReset = document.querySelector('#resetBtn');
-const formulario = document.querySelector('#enviar-mail');
+document.addEventListener('DOMContentLoaded', function() {
 
-// Variables para campos
-const email = document.querySelector('#email');
-const asunto = document.querySelector('#asunto');
-const mensaje = document.querySelector('#mensaje');
-
-const er = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-eventListeners();
-function eventListeners() {
-    // Cuando la app arranca
-    document.addEventListener('DOMContentLoaded', iniciarApp);
-
-    // Campos del formulario
-    email.addEventListener('blur', validarFormulario);
-    asunto.addEventListener('blur', validarFormulario);
-    mensaje.addEventListener('blur', validarFormulario);
-
-    // Reinicia el formulario
-    btnReset.addEventListener('click', resetearFormulario);
-
-    // Enviar email
-    formulario.addEventListener('submit', enviarEmail);
-}
-
-
-
-
-// Funciones
-function iniciarApp() {
-    btnEnviar.disabled = true;
-    btnEnviar.classList.add('cursor-not-allowed', 'opacity-50')
-}
-
-// Valida el formulario
-function validarFormulario(e) {
-
-
-    
-    if(e.target.value.length > 0 ) {
-
-        // Elimina los errores...
-        const error = document.querySelector('p.error');
-        if(error) {
-            error.remove();
-        }
-        
-
-        e.target.classList.remove('border', 'border-red-500');
-        e.target.classList.add('border', 'border-green-500');
-    } else {
-        e.target.classList.remove('border', 'border-green-500');
-        e.target.classList.add('border', 'border-red-500');
-        mostrarError('Todos los campos son obligatorios');
+    const email = {
+        email: '',
+        asunto: '',
+        mensaje: ''
     }
 
-    if(e.target.type === 'email') {
-        if( er.test( e.target.value ) ) {
-            // Elimina los errores...
-            const error = document.querySelector('p.error');
-            if(error) {
-                error.remove();
-            }
-    
-            e.target.classList.remove('border', 'border-red-500');
-            e.target.classList.add('border', 'border-green-500');
-        } else {
-            e.target.classList.remove('border', 'border-green-500');
-            e.target.classList.add('border', 'border-red-500');
-            mostrarError('Email no válido');
-        }
-    }
-
-
-    if( er.test( email.value ) && asunto.value !== '' && mensaje.value !== '') {
-        btnEnviar.disabled = false;
-        btnEnviar.classList.remove('cursor-not-allowed', 'opacity-50')
-    } 
-}
-
-function mostrarError(mensaje) {
-    const mensajeError = document.createElement('p');
-    mensajeError.textContent = mensaje;
-    mensajeError.classList.add('border', 'border-red-500', 'background-red-100', 'text-red-500', 'p-3', 'mt-5', 'text-center', 'error');
-
-    const errores = document.querySelectorAll('.error');
-    if(errores.length === 0) {
-        formulario.appendChild(mensajeError);
-    }
-
-    
-}
-
-
-// Envia el email
-function enviarEmail(e) {
-    e.preventDefault();
-    
-    // Mostrar el spinner
+    // Seleccionar los elementos de la interfaz
+    const inputEmail = document.querySelector('#email');
+    const inputAsunto = document.querySelector('#asunto');
+    const inputMensaje = document.querySelector('#mensaje');
+    const formulario = document.querySelector('#formulario');
+    const btnSubmit = document.querySelector('#formulario button[type="submit"]');
+    const btnReset = document.querySelector('#formulario button[type="reset"]');
     const spinner = document.querySelector('#spinner');
-    spinner.style.display = 'flex';
 
+    // Asignar eventos
+    inputEmail.addEventListener('input', validar);
+    inputAsunto.addEventListener('input', validar);
+    inputMensaje.addEventListener('input', validar);
 
-    // Después de 3 segundos ocultar el spinner y mostrar el mensaje
-    setTimeout( () => {
-        spinner.style.display = 'none';
+    formulario.addEventListener('submit', enviarEmail);
 
-        // Mensaje que dice que se envió correctamente
-        const parrafo = document.createElement('p');
-        parrafo.textContent = 'El mensaje se envió correctamente';
-        parrafo.classList.add('text-center', 'my-10', 'p-2', 'bg-green-500', 'text-white', 'font-bold', 'uppercase')
+    btnReset.addEventListener('click', function(e) {
+        e.preventDefault();
+        resetFormulario();
+    })
 
-        // Inserta el parrafo antes del spinner
-        formulario.insertBefore(parrafo, spinner);
+    function enviarEmail(e) {
+        e.preventDefault();
+
+        spinner.classList.add('flex');
+        spinner.classList.remove('hidden');
 
         setTimeout(() => {
-            parrafo.remove(); // Eliminar el mensaje de éxito
+            spinner.classList.remove('flex');
+            spinner.classList.add('hidden');
 
-            resetearFormulario();
-        }, 5000);
-    }, 3000 );
-}
+            resetFormulario();
 
-// Función que resetea el formulario
-function resetearFormulario() {
-    formulario.reset();
+            // Crear una alerta
+            const alertaExito = document.createElement('P');
+            alertaExito.classList.add('bg-green-500', 'text-white', 'p-2', 'text-center', 'rounded-lg', 'mt-10', 'font-bold', 'text-sm', 'uppercase');
+            alertaExito.textContent = 'Mensaje enviado correctamente';
 
-    iniciarApp();
-}
+            formulario.appendChild(alertaExito);
+
+            setTimeout(() => {
+                alertaExito.remove(); 
+            }, 3000);
+        }, 3000);
+    }
+
+    function validar(e) {
+        if(e.target.value.trim() === '') {
+            mostrarAlerta(`El Campo ${e.target.id} es obligatorio`, e.target.parentElement);
+            email[e.target.name] = '';
+            comprobarEmail();
+            return;
+        }
+
+        if(e.target.id === 'email' && !validarEmail(e.target.value)) {
+            mostrarAlerta('El email no es válido', e.target.parentElement);
+            email[e.target.name] = '';
+            comprobarEmail();
+            return;
+        }
+
+        limpiarAlerta(e.target.parentElement);
+
+        // Asignar los valores
+        email[e.target.name] = e.target.value.trim().toLowerCase();
+
+        // Comprobar el objeto de email
+        comprobarEmail();
+    }
+
+    function mostrarAlerta(mensaje, referencia) {
+        limpiarAlerta(referencia);
+        
+        // Generar alerta en HTML
+        const error = document.createElement('P');
+        error.textContent = mensaje;
+        error.classList.add('bg-red-600', 'text-white', 'p-2', 'text-center');
+       
+        // Inyectar el error al formulario
+        referencia.appendChild(error);
+    }
+
+    function limpiarAlerta(referencia) {
+        // Comprueba si ya existe una alerta
+        const alerta = referencia.querySelector('.bg-red-600');
+        if(alerta) {
+            alerta.remove();
+        }
+    }
+
+    function validarEmail(email) {
+        const regex =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+        const resultado = regex.test(email);
+        return resultado;
+    }
+
+    function comprobarEmail() {
+        if(Object.values(email).includes('')) {
+            btnSubmit.classList.add('opacity-50');
+            btnSubmit.disabled = true;
+            return
+        } 
+        btnSubmit.classList.remove('opacity-50');
+        btnSubmit.disabled = false;
+    }
+
+    function resetFormulario() {
+        // reiniciar el objeto
+        email.email = '';
+        email.asunto = '';
+        email.mensaje = '';
+
+        formulario.reset();
+        comprobarEmail();
+    }
+});

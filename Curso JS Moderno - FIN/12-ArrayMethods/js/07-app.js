@@ -1,12 +1,14 @@
-const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'];
-const meses2 = ['Agosto', 'Septiembre'];
-const meses3 = ['Octubre', 'Noviembre', 'Diciembre'];
+// En este video veremos como unir 2 arreglos, para ello existe un arreay method llamado .concat
 
-// .concat
-const resultado = meses.concat(meses3, meses2);
+const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
+const meses2 = ['Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
-console.log(resultado);
 
-// spread operator
-const resultado2 = [...meses3, ...meses, ...meses2];
-console.log(resultado2);
+// Unir 2 arreglos con concat...
+const meses3 = meses.concat(meses2);
+console.log(meses3);
+
+// Existe otra forma... que es con rest operator o spread operator..
+const meses4 = [...meses,...meses2 ]; // Tienes que asegurarte de que sean arrays cuando usas ...  'Otro mes'
+console.log(meses4)
+

@@ -1,19 +1,16 @@
-const producto = 'Monitor 20 Pulgadas ';
+// Repeat Te va a permitir repetir una cadena de texto:
 
-// .repetear te va a permitir repetir una cadena de texto...
-const texto = ' en Promoción'.repeat(2.4);
-
-console.log(texto);
+const producto = 'Monitor 24 pulgadas ';
+const texto = 'en Promoción '.repeat(3)
+console.log(producto.repeat(3));
+console.log(producto.repeat(2.2)); // va a redondear a entero
 console.log(`${producto} ${texto} !!!`);
+ 
 
 
-// Split, dividir un string
-
-const actividad = "Estoy aprendiendo JavaScript Moderno";
+// Split
+const actividad = 'Estoy aprendiendo Javascript Moderno';
 console.log(actividad.split(" "));
 
-const hobbies = 'Leer, caminar, escuchar música, escribir, aprender a programar';
+const hobbies = 'Leer, caminar, escuchar musica, escribir, aprender a programar';
 console.log(hobbies.split(", "));
-
-const tweet = "Aprendiendo JavaScript #JSModernoConJuan";
-console.log(tweet.split('#'))

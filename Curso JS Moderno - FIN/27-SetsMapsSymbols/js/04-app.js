@@ -1,16 +1,16 @@
-const producto = {
-    idProducto : 10
-}
+// Wekmap
 
-const weakmap = new WeakMap();
+let key = {userId:1};
+let key2 = {userId:2};
+let weakmap = new WeakMap();
 
-weakmap.set(producto, 'Monitor');
+weakmap.set(key,"Alex");
+weakmap.has(key); //true
+weakmap.get(key); //Alex
+weakmap.delete(key); // true
+weakmap.get(key); //undefined
 
-
-console.log( weakmap.has(producto) );
-console.log( weakmap.get(producto) );
-console.log( weakmap.delete(producto) );
-// console.log( weakmap.size );
-
-
-console.log(weakmap)
+weakmap.set(key2,"Vicky");
+weakmap.size; //undefined
+key2=undefined;
+weakmap.get(key2); //undefined

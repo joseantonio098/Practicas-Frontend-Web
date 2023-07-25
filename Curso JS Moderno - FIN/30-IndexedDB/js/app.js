@@ -1,72 +1,77 @@
+
 let DB;
 
 document.addEventListener('DOMContentLoaded', () => {
     crmDB();
 
-
-    setTimeout(() => {
+    setTimeout( () => {
         crearCliente();
-    }, 5000);
-})
+    }, 3000);
+});
 
 
 function crmDB() {
-    // Crear base de datos version 1.0
-    let crmDB = window.indexedDB.open('crm', 1);
+    // crear base de datos con la versión 1
+    let crmDB = window.indexedDB.open('crm', 1.1);
 
-    // Si hay un error
+    // si hay un error, lanzarlo
     crmDB.onerror = function() {
-        console.log('Hubo un error a la hora de crear la BD');
+        console.log('Hubo un error');
     }
-
-    // si se creo bien
+    // si todo esta bien, asignar a database el resultado
     crmDB.onsuccess = function() {
-        console.log('Base de datos Creada!');
-        
+        // console.log('todo listo!');
+
+        // guardamos el resultado
         DB = crmDB.result;
+        
+        console.log(DB);
     }
 
-    // Configuración de la base de datos
+    // este método solo corre una vez
     crmDB.onupgradeneeded = function(e) {
-        const db = e.target.result;
+        // el evento que se va a correr tomamos la base de datos
+        let db = e.target.result;
 
-        const objectStore = db.createObjectStore('crm', {
-            keyPath: 'crm',
-            autoIncrement: true
-        });
+        // definir el objectstore, primer parametro el nombre de la BD, segundo las opciones
+        // keypath es de donde se van a obtener los indices
+        let objectStore = db.createObjectStore('crm', { keyPath: 'crm',  autoIncrement: true } );
 
-        // Definir las columnas
-        objectStore.createIndex('nombre', 'nombre', { unique: false });
-        objectStore.createIndex('email', 'email', { unique: true });
-        objectStore.createIndex('telefono', 'telefono', { unique: false });
+        //createindex, nombre y keypath, 3ro los parametros, keypath esn este caso sera el indice para poder realizar busquedas
+        objectStore.createIndex('nombre', 'nombre', { unique: false } );
+        objectStore.createIndex('email', 'email', { unique: true } );
+        objectStore.createIndex('telefono', 'telefono', { unique: false } );
 
-
-        console.log('Columnas Creadas');
+        console.log('DB creada y lista');
     }
 }
+
 
 function crearCliente() {
-    let transaction = DB.transaction(['crm'], 'readwrite'); 
 
-    transaction.oncomplete = function() {
+    // Crear un nuevo registro
+
+    let transaction = DB.transaction(['crm'], 'readwrite');
+    transaction.oncomplete = function(event) {
         console.log('Transacción Completada');
-    }
+    };
+    
+    transaction.onerror = function(event) {
+        console.log('Hubo un error en la transacción')
+    };
 
-    transaction.onerror = function() {
-        console.log('Hubo un error en la transacción');
-    }
-
-    const objectStore = transaction.objectStore('crm');
+    let objectStore = transaction.objectStore('crm');
+    console.log(objectStore);
 
     const nuevoCliente = {
-        telefono: 19009120,
-        nombre: 'Juan',
-        email: 'correo@correo.com'
+        nombre : "Juan",
+        email: "correo@correo.com",
+        telefono: 1020912
     }
 
-    const peticion = objectStore.put(nuevoCliente);
+
+    let peticion = objectStore.add(nuevoCliente);
 
     console.log(peticion);
-
-
 }
+

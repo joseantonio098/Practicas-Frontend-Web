@@ -1,38 +1,53 @@
-const sym = Symbol('1');
-const sym2 = Symbol('1');
+
+// Symbol
+
+// Los simbolos son nuevos en ES6, te permiten crear propiedad única 
+
+// Symbol es creado y se agrega a una propiedad del objeto.
+// new Symbol enviaria un error.
+
+
+const sym = Symbol('symbol');
+const sym2 = Symbol('symbol');
+
+// Los symbolos siempre son diferentes
 
 // console.log( Symbol() === Symbol() );
 
+// Llaves de objetos únicas
+let nombre = Symbol();
+let apellido = Symbol();
 
-const nombre = Symbol();
-const apellido = Symbol();
+// Crear un objeto vacio
+let persona = {}
+// Esto no va a servir
 
-const persona = {}
+persona.datos;
 
-// Agregar nombre y apellido como llaves del objeto
+// debe tener corchetes
 persona[nombre] = 'Juan';
 persona[apellido] = 'De la torre';
 persona.tipoCliente = 'Premium';
-persona.saldo = 500
-
-
+persona.saldo = 500;
 console.log(persona);
-// console.log(persona[nombre]);
+console.log(persona[nombre]);
 
-// Las propiedades que utilizan un symbol no son iterables
+// No se puede acceder al SYMBOL con un for.
 for(let i in persona) {
-    console.log(i);
+    console.log(`${i} : ${persona[i]}`);
 }
 
-
-// Definir una descripción del symbol
-const nombreCliente = Symbol('Nombre del Cliente');
-const cliente = {};
-
+// También se puede crear UNA DESCRIPCION DEL SYMBOLO
+/*
+let nombreCliente = Symbol('Nombre del cliente');
+let cliente = {};
 
 cliente[nombreCliente] = 'Pedro';
 
 
+// Probar
 console.log(cliente);
 console.log(cliente[nombreCliente]);
 console.log(nombreCliente);
+
+*/

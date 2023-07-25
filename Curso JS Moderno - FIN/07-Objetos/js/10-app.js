@@ -1,21 +1,19 @@
+
 const producto = {
-    nombre: "Monitor 20 Pulgadas",
-    precio: 300,
-    disponible: true,
+    nombre: "Monitor 20 pulgadas",
+    precio: 30,
+    disponible: true
 }
+
 
 const medidas = {
-    peso: '1kg',
-    medida: '1m'
+    peso: '1 kg',
+    medida: '1 metro'
 }
 
-console.log(producto)
-console.log(medidas)
 
-const resultado = Object.assign(producto, medidas);
+// Otra forma de hacerlo que se considera más moderna es con algo llamado el Spread Operator o Rest Operator
 
-// Spread Operator o Rest Operator
-const resultado2 = { ...producto, ...medidas }
+const resultado = { ...producto, ...medidas};
 
 console.log(resultado);
-console.log(resultado2);
